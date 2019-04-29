@@ -5,8 +5,9 @@ RUN yum install -y wget
 #换yum源
 RUN mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo_bak && wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo && yum makecache
 #安装jdk、maven、建立目录
-RUN yum install -y java-1.8.0-openjdk maven && mkdir -p /root/project/data-import/src && mkdir -p /root/project/data-import/
+RUN yum install -y java-1.8.0-openjdk maven && mkdir -p /root/project/data-import/src && mkdir -p /root/project/data-import/lib
 #复制文件
+COPY lib /root/project/data-import/lib
 COPY src /root/project/data-import/src
 COPY pom.xml /root/project/data-import/
 RUN cd /root/project/data-import && mvn install && mvn package && mkdir -p /root/output/
