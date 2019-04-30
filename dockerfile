@@ -13,6 +13,7 @@ COPY pom.xml /root/project/data_import/
 RUN ls /root/project/data_import
 RUN ls /root/project/data_import/src
 RUN ls /root/project/data_import/lib
+RUN cd /root/project/data_import/lib && mvn install:install-file -Dfile=datadock-rdata-exchange-client4java-1.5.10.jar -DgroupId=cn.ac.iie.di.datadock -DartifactId=datadock-rdata-exchange-client4java -Dversion=1.5.10 -Dpackaging=jar -DgeneratePom=true
 RUN cd /root/project/data_import && mvn install -e
 RUN cd /root/project/data_import && mvn package
 RUN mkdir -p /root/output/
