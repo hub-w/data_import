@@ -184,7 +184,7 @@
                         <id>install-external-ojdbc</id>
                         <phase>clean</phase>
                         <configuration>
-                            <file>/root/project/data_import/lib/datadock-rdata-exchange-client4java-1.5.10.jar</file>
+                            <file>${project.basedir}/lib/datadock-rdata-exchange-client4java-1.5.10.jar</file>
                             <repositoryLayout>default</repositoryLayout>
                             <groupId>cn.ac.iie.di.datadock</groupId>
                             <artifactId>datadock-rdata-exchange-client4java</artifactId>
