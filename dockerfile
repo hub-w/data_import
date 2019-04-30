@@ -10,7 +10,10 @@ RUN yum install -y java-1.8.0-openjdk maven && mkdir -p /root/project/data_impor
 COPY lib /root/project/data_import/lib
 COPY src /root/project/data_import/src
 COPY pom.xml /root/project/data_import/
-RUN cd /root/project/data_import && mvn install && mvn package && mkdir -p /root/output/
+RUN ls /root/project/data_import
+RUN ls /root/project/data_import/src
+RUN ls /root/project/data_import/lib
+RUN cd /root/project/data_import && mvn install -e && mvn package && mkdir -p /root/output/
 RUN cp /root/project/data_import/target/data_import-1.0-SNAPSHOT.jar /root/output
 
 #一个dockerfile中可以有多个FROM,但是只会有一个生成镜像
