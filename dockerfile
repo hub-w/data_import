@@ -13,9 +13,8 @@ COPY pom.xml /root/project/data_import/
 RUN ls /root/project/data_import
 RUN ls /root/project/data_import/src
 RUN ls /root/project/data_import/lib
-RUN cd /root/project/data_import
-RUN mvn install -e
-RUN mvn package
+RUN cd /root/project/data_import && mvn install -e
+RUN cd /root/project/data_import && mvn package
 RUN mkdir -p /root/output/
 RUN cp /root/project/data_import/target/data_import-1.0-SNAPSHOT.jar /root/output
 
