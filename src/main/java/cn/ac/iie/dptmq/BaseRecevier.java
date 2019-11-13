@@ -9,6 +9,7 @@ import cn.ac.iie.di.datadock.rdata.exchange.client.v1.connecotor.RERocketmqRecei
 import cn.ac.iie.di.datadock.rdata.exchange.client.v1.connection.REConnection;
 import cn.ac.iie.di.datadock.rdata.exchange.client.v1.session.REReceiveSession;
 import cn.ac.iie.di.datadock.rdata.exchange.client.v1.session.REReceiveSessionBuilder;
+import cn.ac.iie.di.datadock.rdata.exchange.client.v1.session.RESendSessionBuilder;
 import cn.ac.iie.utils.CommonConstant;
 import org.apache.log4j.Logger;
 
@@ -18,7 +19,7 @@ import java.text.SimpleDateFormat;
 public class BaseRecevier {
 	private static final Logger logger = Logger.getLogger(BaseRecevier.class);
 	public void receiver(String group, String topic, REAbstractReceiveMessageHandler<REMessage> success, REAbstractReceiveMessageHandler<FailureMessage> fail) throws REConnectionException {
-		RERocketmqReceiver.callBackThreadNum = Integer.parseInt(CommonConstant.get("callBackNum"));
+		//RERocketmqReceiver.callBackThreadNum = Integer.parseInt(CommonConstant.get("callBackNum"));
 		//生成连接，参数为rocketmq的nameserver串。可以多个nameserver，分号隔开。由具体业务决定
 		REConnection conn = new REConnection(CommonConstant.get("dpt_mq_address"));
 		//生成builder，参数为topic，由具体业务决定
@@ -58,7 +59,6 @@ public class BaseRecevier {
 		builder.setConsumeThreadNum(Integer.parseInt(CommonConstant.get("dpt_mq_thread_num")));
 		//生成session
 		REReceiveSession session = (REReceiveSession) builder.build();
-
 		//session开始，自动接收数据，并回调处理函数。非阻塞
 		session.start();
 		logger.info("session开始，自动接收数据");

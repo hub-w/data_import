@@ -9,7 +9,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import java.io.File;
-import java.util.Random;
 
 /**
  * Hello world!
@@ -23,6 +22,5 @@ public class App {
     public static void main(String[] args) throws REConnectionException {
         BaseRecevier recevier = new BaseRecevier();
         recevier.receiver(CommonConstant.get("dpt_mq_group"), CommonConstant.get("dpt_mq_topic"), new SuccessHandler(), new FailHandler());
-
     }
 }

@@ -2,6 +2,7 @@ package cn.ac.iie.feign;
 
 import cn.ac.iie.dto.requests.SynthesizeRequest;
 import cn.ac.iie.dto.response.SynthesizeResponse;
+import com.alibaba.fastjson.JSONObject;
 import feign.Headers;
 import feign.RequestLine;
 
@@ -14,5 +15,5 @@ import feign.RequestLine;
 public interface SynthesizeService {
     @Headers("Content-Type: application/json")
     @RequestLine("POST /synthesizeEngine")
-    SynthesizeResponse synthesize(SynthesizeRequest param);
+    JSONObject synthesize(JSONObject param);
 }

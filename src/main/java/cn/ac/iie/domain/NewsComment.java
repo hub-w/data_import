@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
@@ -35,83 +34,61 @@ public class NewsComment {
 
     private String topicId;
 
-    private String mUrlDomain;
 
-    private String gChKey;
 
-    private String mUrl;
 
-    private String uGChKey;
+
+
+
 
     private String uName;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mPublishTime;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mUploadTime;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mDownTime;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mDelTime;
-
-    private Integer moStatus;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date moTime;
-
-    private Long mReplyCnt;
-
-    private Long mJoinCnt;
-
-    private Long mForwardCnt;
-
-    private Long uFavouriteCnt;
-
-    private Long mReportCnt;
-
-    private Long mLikeCnt;
-
+    private String gChKey;
+    private String mRootGChKey;
+    private String mContent;
+    private String uSendIp;
+    private String uLocCounty;
+    private String msgVersion;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date mInsertTime;
-
+    private String uGChKey;
+    private String uChId;
+    private String mRiskLabel;
+    private String uSendLocation;
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mGatherTime;
-
-    private Integer mTitleLen;
-
-    private Integer mContentLen;
-
+    private Date mSnapshotTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date mPublishTime;
+    private String mParentId;
+    private String msgType;
+    private String mStatus;
+    private String mRootChId;
+    private String mIsPtGenerated;
     private String gAsp;
+    private String uLocProvince;
+    private String key;
 
-    private String gAdp;
-
-    private Integer mSentiment;
-
-    private Integer mType;
-
+    private String[] mTags;
+    private String mTagsString;
     private String mChId;
-
-    private Integer uType;
-
-    private String mMentionedSubjects;
-
-    private Long mReadCnt;
-
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date mUpdateTime;
-
-    private String mCategoryTag;
-
-
-    private String mSource;
-    private String hitKeyword;
+    private String[] mVideoUrls;
+    private String mVideoUrlsString;
+    private String[] mVideoFiles;
+    private String mVideoFilesString;
     private String mTitle;
+    private String mType;
+    private int mPlayCnt;
+    private int mLikeCnt;
+    private int mReplyCnt;
+    private int mReportCnt;
+    private int mForwardCnt;
+
+
+
+
+    private String hitKeyword;
     private String mAbstract;
-    private String mContent;
     private Integer isDelete;
-    private String mRootGChKey;
+
 
 
     private NewsComment parent;
@@ -123,6 +100,22 @@ public class NewsComment {
     private String type;
     private List<String> ids;
     private String emotion;
+
+    public String getmTagsString() {
+        return mTagsString;
+    }
+
+    public void setmTagsString(String mTagsString) {
+        this.mTagsString = mTagsString;
+    }
+
+    public String getmVideoUrlsString() {
+        return mVideoUrlsString;
+    }
+
+    public void setmVideoUrlsString(String mVideoUrlsString) {
+        this.mVideoUrlsString = mVideoUrlsString;
+    }
 
     public Integer getId() {
         return id;
@@ -204,12 +197,12 @@ public class NewsComment {
         this.topicId = topicId;
     }
 
-    public String getmUrlDomain() {
-        return mUrlDomain;
+    public String getuName() {
+        return uName;
     }
 
-    public void setmUrlDomain(String mUrlDomain) {
-        this.mUrlDomain = mUrlDomain;
+    public void setuName(String uName) {
+        this.uName = uName;
     }
 
     public String getgChKey() {
@@ -220,124 +213,28 @@ public class NewsComment {
         this.gChKey = gChKey;
     }
 
-    public String getmUrl() {
-        return mUrl;
+    public String getuSendIp() {
+        return uSendIp;
     }
 
-    public void setmUrl(String mUrl) {
-        this.mUrl = mUrl;
+    public void setuSendIp(String uSendIp) {
+        this.uSendIp = uSendIp;
     }
 
-    public String getuGChKey() {
-        return uGChKey;
+    public String getuLocCounty() {
+        return uLocCounty;
     }
 
-    public void setuGChKey(String uGChKey) {
-        this.uGChKey = uGChKey;
+    public void setuLocCounty(String uLocCounty) {
+        this.uLocCounty = uLocCounty;
     }
 
-    public String getuName() {
-        return uName;
+    public String getMsgVersion() {
+        return msgVersion;
     }
 
-    public void setuName(String uName) {
-        this.uName = uName;
-    }
-
-    public Date getmPublishTime() {
-        return mPublishTime;
-    }
-
-    public void setmPublishTime(Date mPublishTime) {
-        this.mPublishTime = mPublishTime;
-    }
-
-    public Date getmUploadTime() {
-        return mUploadTime;
-    }
-
-    public void setmUploadTime(Date mUploadTime) {
-        this.mUploadTime = mUploadTime;
-    }
-
-    public Date getmDownTime() {
-        return mDownTime;
-    }
-
-    public void setmDownTime(Date mDownTime) {
-        this.mDownTime = mDownTime;
-    }
-
-    public Date getmDelTime() {
-        return mDelTime;
-    }
-
-    public void setmDelTime(Date mDelTime) {
-        this.mDelTime = mDelTime;
-    }
-
-    public Integer getMoStatus() {
-        return moStatus;
-    }
-
-    public void setMoStatus(Integer moStatus) {
-        this.moStatus = moStatus;
-    }
-
-    public Date getMoTime() {
-        return moTime;
-    }
-
-    public void setMoTime(Date moTime) {
-        this.moTime = moTime;
-    }
-
-    public Long getmReplyCnt() {
-        return mReplyCnt;
-    }
-
-    public void setmReplyCnt(Long mReplyCnt) {
-        this.mReplyCnt = mReplyCnt;
-    }
-
-    public Long getmJoinCnt() {
-        return mJoinCnt;
-    }
-
-    public void setmJoinCnt(Long mJoinCnt) {
-        this.mJoinCnt = mJoinCnt;
-    }
-
-    public Long getmForwardCnt() {
-        return mForwardCnt;
-    }
-
-    public void setmForwardCnt(Long mForwardCnt) {
-        this.mForwardCnt = mForwardCnt;
-    }
-
-    public Long getuFavouriteCnt() {
-        return uFavouriteCnt;
-    }
-
-    public void setuFavouriteCnt(Long uFavouriteCnt) {
-        this.uFavouriteCnt = uFavouriteCnt;
-    }
-
-    public Long getmReportCnt() {
-        return mReportCnt;
-    }
-
-    public void setmReportCnt(Long mReportCnt) {
-        this.mReportCnt = mReportCnt;
-    }
-
-    public Long getmLikeCnt() {
-        return mLikeCnt;
-    }
-
-    public void setmLikeCnt(Long mLikeCnt) {
-        this.mLikeCnt = mLikeCnt;
+    public void setMsgVersion(String msgVersion) {
+        this.msgVersion = msgVersion;
     }
 
     public Date getmInsertTime() {
@@ -348,28 +245,92 @@ public class NewsComment {
         this.mInsertTime = mInsertTime;
     }
 
-    public Date getmGatherTime() {
-        return mGatherTime;
+    public String getuGChKey() {
+        return uGChKey;
     }
 
-    public void setmGatherTime(Date mGatherTime) {
-        this.mGatherTime = mGatherTime;
+    public void setuGChKey(String uGChKey) {
+        this.uGChKey = uGChKey;
     }
 
-    public Integer getmTitleLen() {
-        return mTitleLen;
+    public String getuChId() {
+        return uChId;
     }
 
-    public void setmTitleLen(Integer mTitleLen) {
-        this.mTitleLen = mTitleLen;
+    public void setuChId(String uChId) {
+        this.uChId = uChId;
     }
 
-    public Integer getmContentLen() {
-        return mContentLen;
+    public String getmRiskLabel() {
+        return mRiskLabel;
     }
 
-    public void setmContentLen(Integer mContentLen) {
-        this.mContentLen = mContentLen;
+    public void setmRiskLabel(String mRiskLabel) {
+        this.mRiskLabel = mRiskLabel;
+    }
+
+    public String getuSendLocation() {
+        return uSendLocation;
+    }
+
+    public void setuSendLocation(String uSendLocation) {
+        this.uSendLocation = uSendLocation;
+    }
+
+    public Date getmSnapshotTime() {
+        return mSnapshotTime;
+    }
+
+    public void setmSnapshotTime(Date mSnapshotTime) {
+        this.mSnapshotTime = mSnapshotTime;
+    }
+
+    public Date getmPublishTime() {
+        return mPublishTime;
+    }
+
+    public void setmPublishTime(Date mPublishTime) {
+        this.mPublishTime = mPublishTime;
+    }
+
+    public String getmParentId() {
+        return mParentId;
+    }
+
+    public void setmParentId(String mParentId) {
+        this.mParentId = mParentId;
+    }
+
+    public String getMsgType() {
+        return msgType;
+    }
+
+    public void setMsgType(String msgType) {
+        this.msgType = msgType;
+    }
+
+    public String getmStatus() {
+        return mStatus;
+    }
+
+    public void setmStatus(String mStatus) {
+        this.mStatus = mStatus;
+    }
+
+    public String getmRootChId() {
+        return mRootChId;
+    }
+
+    public void setmRootChId(String mRootChId) {
+        this.mRootChId = mRootChId;
+    }
+
+    public String getmIsPtGenerated() {
+        return mIsPtGenerated;
+    }
+
+    public void setmIsPtGenerated(String mIsPtGenerated) {
+        this.mIsPtGenerated = mIsPtGenerated;
     }
 
     public String getgAsp() {
@@ -380,28 +341,84 @@ public class NewsComment {
         this.gAsp = gAsp;
     }
 
-    public String getgAdp() {
-        return gAdp;
+    public String getuLocProvince() {
+        return uLocProvince;
     }
 
-    public void setgAdp(String gAdp) {
-        this.gAdp = gAdp;
+    public void setuLocProvince(String uLocProvince) {
+        this.uLocProvince = uLocProvince;
     }
 
-    public Integer getmSentiment() {
-        return mSentiment;
+    public String getKey() {
+        return key;
     }
 
-    public void setmSentiment(Integer mSentiment) {
-        this.mSentiment = mSentiment;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public Integer getmType() {
-        return mType;
+    public String[] getmTags() {
+        return mTags;
     }
 
-    public void setmType(Integer mType) {
-        this.mType = mType;
+    public void setmTags(String[] mTags) {
+        this.mTags = mTags;
+    }
+
+    public String[] getmVideoFiles() {
+        return mVideoFiles;
+    }
+
+    public void setmVideoFiles(String[] mVideoFiles) {
+        this.mVideoFiles = mVideoFiles;
+    }
+
+    public String getmVideoFilesString() {
+        return mVideoFilesString;
+    }
+
+    public void setmVideoFilesString(String mVideoFilesString) {
+        this.mVideoFilesString = mVideoFilesString;
+    }
+
+    public int getmPlayCnt() {
+        return mPlayCnt;
+    }
+
+    public void setmPlayCnt(int mPlayCnt) {
+        this.mPlayCnt = mPlayCnt;
+    }
+
+    public int getmLikeCnt() {
+        return mLikeCnt;
+    }
+
+    public void setmLikeCnt(int mLikeCnt) {
+        this.mLikeCnt = mLikeCnt;
+    }
+
+    public int getmReplyCnt() {
+        return mReplyCnt;
+    }
+
+    public void setmReplyCnt(int mReplyCnt) {
+        this.mReplyCnt = mReplyCnt;
+    }
+
+    public int getmReportCnt() {
+        return mReportCnt;
+    }
+
+    public void setmReportCnt(int mReportCnt) {
+        this.mReportCnt = mReportCnt;
+    }
+
+    public int getmForwardCnt() {
+        return mForwardCnt;
+    }
+
+    public void setmForwardCnt(int mForwardCnt) {
+        this.mForwardCnt = mForwardCnt;
     }
 
     public String getmChId() {
@@ -412,52 +429,21 @@ public class NewsComment {
         this.mChId = mChId;
     }
 
-    public Integer getuType() {
-        return uType;
+
+    public String[] getmVideoUrls() {
+        return mVideoUrls;
     }
 
-    public void setuType(Integer uType) {
-        this.uType = uType;
+    public void setmVideoUrls(String[] mVideoUrls) {
+        this.mVideoUrls = mVideoUrls;
     }
 
-    public String getmMentionedSubjects() {
-        return mMentionedSubjects;
+    public String getmType() {
+        return mType;
     }
 
-    public void setmMentionedSubjects(String mMentionedSubjects) {
-        this.mMentionedSubjects = mMentionedSubjects;
-    }
-
-    public Long getmReadCnt() {
-        return mReadCnt;
-    }
-
-    public void setmReadCnt(Long mReadCnt) {
-        this.mReadCnt = mReadCnt;
-    }
-
-    public Date getmUpdateTime() {
-        return mUpdateTime;
-    }
-
-    public void setmUpdateTime(Date mUpdateTime) {
-        this.mUpdateTime = mUpdateTime;
-    }
-
-    public String getmCategoryTag() {
-        return mCategoryTag;
-    }
-
-    public void setmCategoryTag(String mCategoryTag) {
-        this.mCategoryTag = mCategoryTag;
-    }
-
-    public String getmSource() {
-        return mSource;
-    }
-
-    public void setmSource(String mSource) {
-        this.mSource = mSource;
+    public void setmType(String mType) {
+        this.mType = mType;
     }
 
     public String getHitKeyword() {

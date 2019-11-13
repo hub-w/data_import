@@ -12,8 +12,8 @@ import feign.RequestLine;
  * @Date 19/4/15 下午2:51
  * @Version 1.0
  **/
-public interface InsertService {
+public interface InsertVideoService {
     @Headers("Content-Type: application/json")
-    @RequestLine("POST /dsp/Comment/addTComment")
+    @RequestLine("POST /dsp/Video/addTVideo")
     Response insertNewsComment(Request<NewsComment> request);
 }
