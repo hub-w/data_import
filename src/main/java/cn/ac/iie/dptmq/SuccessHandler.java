@@ -105,7 +105,7 @@ public class SuccessHandler extends REAbstractReceiveMessageHandler<REMessage> {
                 logger.info("调用插入接口：：：" + new ObjectMapper().writeValueAsString(request));
                 Response response = new Response();
                 if (CommonConstant.get("dpt_mq_topic").contains("comment")) {
-                    response = insertService.insertNewsComment(request);
+                        response = insertService.insertNewsComment(request);
                 } else {
                     response = insertVideoService.insertNewsComment(request);
                 }
