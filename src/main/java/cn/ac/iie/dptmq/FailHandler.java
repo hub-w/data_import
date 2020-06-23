@@ -1,3 +1,4 @@
+/*
 package cn.ac.iie.dptmq;
 
 import cn.ac.iie.di.datadock.rdata.exchange.client.core.session.receive.REAbstractReceiveMessageHandler;
@@ -14,3 +15,4 @@ public class FailHandler extends REAbstractReceiveMessageHandler<FailureMessage>
 		return true;
 	}
 }
+*/

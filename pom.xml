@@ -30,7 +30,7 @@
         <dependency>
             <groupId>cn.ac.iie.di.datadock</groupId>
             <artifactId>datadock-rdata-exchange-client4java</artifactId>
-            <version>1.5.10</version>
+            <version>2.6.2.2</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.netflix.feign/feign-core -->
@@ -58,25 +58,33 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-client -->
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-client -->
         <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
+            <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
-            <version>3.1.8</version>
+            <version>4.5.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-common -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-common -->
         <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
+            <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-common</artifactId>
-            <version>3.1.8</version>
+            <version>4.5.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/com.alibaba.rocketmq/rocketmq-remoting -->
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-remoting -->
         <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
+            <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-remoting</artifactId>
-            <version>3.1.8</version>
+            <version>4.5.2</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.rocketmq/rocketmq-acl -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-acl</artifactId>
+            <version>4.5.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
         <dependency>
@@ -203,6 +211,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
             </plugin>
         </plugins>
 
