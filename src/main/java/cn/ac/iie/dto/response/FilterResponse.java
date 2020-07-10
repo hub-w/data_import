@@ -9,7 +9,7 @@ import lombok.Data;
  * @Date 19/4/15 下午2:55
  * @Version 1.0
  **/
-//@Data
+@Data
 public class FilterResponse {
     private boolean status;
     private String msg;
@@ -20,23 +20,4 @@ public class FilterResponse {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public FilterRes getFilterRes() {
-        return filterRes;
-    }
-
-    public void setFilterRes(FilterRes filterRes) {
-        this.filterRes = filterRes;
-    }
 }

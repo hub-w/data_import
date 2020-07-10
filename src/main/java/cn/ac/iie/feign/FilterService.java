@@ -2,8 +2,13 @@ package cn.ac.iie.feign;
 
 import cn.ac.iie.dto.requests.FilterRequest;
 import cn.ac.iie.dto.response.FilterResponse;
+import cn.ac.iie.dto.response.FilterResult;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import feign.Headers;
 import feign.RequestLine;
+
+import java.util.List;
 
 /**
  * @ClassName FilterService
@@ -14,5 +19,5 @@ import feign.RequestLine;
 public interface FilterService {
     @Headers("Content-Type: application/json")
     @RequestLine("POST /filter")
-    FilterResponse filter(FilterRequest param);
+    FilterResult filter(JSONArray param);
 }
